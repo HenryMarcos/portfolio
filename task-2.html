@@ -43,6 +43,46 @@
                         <li><strong>Nguồn mở:</strong> WHO, arXiv, Kaggle và GitHub.</li>
                         <li><strong>Dữ liệu thực hành:</strong> Food-101 dùng để huấn luyện và đánh giá mô hình.</li>
                     </ul>
+                    <h3>Toán tử tìm kiếm đã áp dụng</h3>
+                    <div class="table-scroll">
+                        <table class="report-table">
+                            <thead>
+                                <tr>
+                                    <th>Toán tử</th>
+                                    <th>Truy vấn mẫu</th>
+                                    <th>Mục đích sử dụng</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>"..."</code></td>
+                                    <td><code>"food calorie estimation" "deep learning"</code></td>
+                                    <td>Tìm chính xác cụm từ liên quan đến ước lượng calo bằng AI, giảm kết quả lan man.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>site:</code></td>
+                                    <td><code>food recognition deep learning site:ieee.org</code></td>
+                                    <td>Ưu tiên nguồn học thuật đáng tin cậy từ IEEE hoặc các tổ chức chuyên ngành.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>filetype:</code></td>
+                                    <td><code>"dietary assessment" computer vision filetype:pdf</code></td>
+                                    <td>Tìm báo cáo, bài báo hoặc tài liệu PDF có cấu trúc học thuật rõ ràng.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>OR</code></td>
+                                    <td><code>"food recognition" OR "food classification"</code></td>
+                                    <td>Mở rộng phạm vi bằng các thuật ngữ tương đương trong lĩnh vực Computer Vision.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>-</code></td>
+                                    <td><code>"food recognition" -restaurant -menu</code></td>
+                                    <td>Loại bỏ kết quả thương mại hoặc nội dung không liên quan đến nghiên cứu AI.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p>Các toán tử được kết hợp linh hoạt để lọc từ kết quả rộng sang nguồn có độ tin cậy cao. Ví dụ, truy vấn <code>"image-based food calorie estimation" filetype:pdf</code> phù hợp để tìm bài nghiên cứu, trong khi <code>Food-101 dataset Kaggle</code> được dùng khi cần dữ liệu thực hành.</p>
                 </section>
 
                 <section id="evaluation" class="report-section">
