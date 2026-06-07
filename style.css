@@ -241,6 +241,22 @@ figcaption {
     font-size: clamp(1.05rem, 2vw, 1.25rem);
 }
 
+.student-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: 1.5rem;
+}
+
+.student-meta span {
+    padding: 0.35rem 0.7rem;
+    color: var(--accent-dark);
+    background: var(--accent-soft);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
 .button-group {
     display: flex;
     align-items: center;
@@ -290,6 +306,14 @@ figcaption {
     border: 1px dashed var(--accent);
     border-radius: 13px;
     font-weight: 700;
+}
+
+.profile-photo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border: 1px solid var(--border);
+    border-radius: 13px;
 }
 
 .profile-details {
@@ -437,6 +461,47 @@ figcaption {
 
 .task-content {
     padding: 2rem;
+}
+
+.document-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.25rem 2rem;
+    background: var(--accent-soft);
+    border-top: 1px solid #bfdbfe;
+}
+
+.document-actions p {
+    margin: 0;
+    color: var(--text);
+}
+
+.button-small {
+    min-width: max-content;
+    padding: 0.65rem 1rem;
+    font-size: 0.9rem;
+}
+
+.task-evidence {
+    padding: 0 2rem 2rem;
+}
+
+.inline-evidence {
+    margin-top: 1.5rem;
+}
+
+.inline-evidence img {
+    max-height: 560px;
+    object-fit: contain;
+    background: var(--surface-alt);
+}
+
+.task-evidence img {
+    max-height: 520px;
+    object-fit: contain;
+    background: var(--surface-alt);
 }
 
 .media-grid,
@@ -617,6 +682,16 @@ figcaption {
         padding: 1.4rem;
     }
 
+    .document-actions {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 1.25rem 1.4rem;
+    }
+
+    .task-evidence {
+        padding: 0 1.4rem 1.4rem;
+    }
+
     .footer-wrapper {
         gap: 1rem;
     }
@@ -654,5 +729,323 @@ figcaption {
     *::before,
     *::after {
         transition: none !important;
+    }
+}
+
+/* =========================================================
+   7. TRANG CHI TIẾT TỪNG TASK
+   ========================================================= */
+.report-hero {
+    padding: 4.5rem 0 3.5rem;
+    background:
+        radial-gradient(circle at 90% 0, rgba(37, 99, 235, 0.15), transparent 34%),
+        var(--surface-alt);
+    border-bottom: 1px solid var(--border);
+}
+
+.report-hero h1 {
+    max-width: 900px;
+    font-size: clamp(2.25rem, 5vw, 3.8rem);
+}
+
+.report-kicker {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+}
+
+.report-kicker span {
+    padding: 0.35rem 0.7rem;
+    color: var(--accent-dark);
+    background: var(--accent-soft);
+    border: 1px solid #bfdbfe;
+    border-radius: 999px;
+    font-size: 0.84rem;
+    font-weight: 700;
+}
+
+.report-layout {
+    display: grid;
+    grid-template-columns: 230px minmax(0, 1fr);
+    align-items: start;
+    gap: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+}
+
+.report-toc {
+    position: sticky;
+    top: 100px;
+    padding: 1.2rem;
+    background: var(--surface-alt);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.report-toc strong {
+    display: block;
+    margin-bottom: 0.7rem;
+}
+
+.report-toc ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.report-toc li + li {
+    margin-top: 0.35rem;
+}
+
+.report-toc a {
+    display: block;
+    padding: 0.35rem 0.45rem;
+    color: var(--muted);
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.report-toc a:hover {
+    color: var(--accent-dark);
+    background: var(--accent-soft);
+}
+
+.report-body {
+    min-width: 0;
+}
+
+.report-section {
+    scroll-margin-top: 105px;
+    margin-bottom: 2rem;
+    padding: clamp(1.4rem, 3vw, 2.2rem);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.report-section > :last-child {
+    margin-bottom: 0;
+}
+
+.report-section p,
+.report-section li {
+    color: #46546a;
+}
+
+.report-section h2 {
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.report-section h3 {
+    margin-top: 1.6rem;
+}
+
+.report-section h3:first-child {
+    margin-top: 0;
+}
+
+.step-list {
+    display: grid;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: report-step;
+}
+
+.step-list li {
+    position: relative;
+    padding: 1rem 1rem 1rem 3.6rem;
+    background: var(--surface-alt);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    counter-increment: report-step;
+}
+
+.step-list li::before {
+    position: absolute;
+    top: 0.85rem;
+    left: 0.9rem;
+    display: grid;
+    width: 2rem;
+    height: 2rem;
+    place-items: center;
+    color: #ffffff;
+    background: var(--accent);
+    border-radius: 50%;
+    content: counter(report-step);
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.report-callout {
+    margin: 1.25rem 0;
+    padding: 1.15rem 1.25rem;
+    background: var(--accent-soft);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 10px 10px 0;
+}
+
+.report-callout p {
+    margin-bottom: 0;
+    color: var(--text);
+}
+
+.table-scroll {
+    overflow-x: auto;
+    margin: 1.25rem 0;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.report-table {
+    width: 100%;
+    min-width: 720px;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.report-table th,
+.report-table td {
+    padding: 0.85rem;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--border);
+}
+
+.report-table th {
+    color: var(--text);
+    background: var(--accent-soft);
+}
+
+.report-table tr:last-child td {
+    border-bottom: 0;
+}
+
+.report-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1.25rem;
+}
+
+.report-gallery figure {
+    padding: 0.75rem;
+    background: var(--surface-alt);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.report-gallery img {
+    max-height: 560px;
+    object-fit: contain;
+}
+
+.report-gallery .full-width {
+    grid-column: 1 / -1;
+}
+
+.prompt-sample {
+    margin: 1rem 0;
+    padding: 1rem 1.2rem;
+    color: #dbeafe;
+    background: #172033;
+    border-radius: 12px;
+    white-space: pre-wrap;
+}
+
+.source-list {
+    padding-left: 1.25rem;
+    font-size: 0.92rem;
+}
+
+.source-list li {
+    margin-bottom: 0.65rem;
+    overflow-wrap: anywhere;
+}
+
+.task-pagination {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.task-pagination a {
+    padding: 0.75rem 1rem;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    font-weight: 700;
+}
+
+.task-pagination a:hover {
+    color: var(--accent-dark);
+    border-color: var(--accent);
+}
+
+.download-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding: 1.2rem 1.4rem;
+    background: var(--accent-soft);
+    border: 1px solid #bfdbfe;
+    border-radius: 12px;
+}
+
+.download-panel p {
+    margin: 0;
+    color: var(--text);
+}
+
+@media (max-width: 850px) {
+    .report-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .report-toc {
+        position: static;
+        overflow-x: auto;
+    }
+
+    .report-toc ul {
+        display: flex;
+        gap: 0.35rem;
+    }
+
+    .report-toc li + li {
+        margin-top: 0;
+    }
+
+    .report-toc a {
+        min-width: max-content;
+    }
+}
+
+@media (max-width: 600px) {
+    .report-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .report-gallery .full-width {
+        grid-column: auto;
+    }
+
+    .download-panel,
+    .task-pagination {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .task-pagination a {
+        text-align: center;
     }
 }
